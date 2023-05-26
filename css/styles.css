@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(32, 39, 66, 0.707);
+  
+  }
+  
+  body .container {
+    position: relative;
+    top: 30px; 
+  }
+  .cup {
+    position: relative;
+    background: linear-gradient(to right, #eeeeef, #e5eaf6);
+    width: 300px;
+    height: 300px;
+    border-radius: 0px 0px 40% 40%;
+   
+  }
+  
+    .top {
+      position: absolute;
+      top: -30px;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(to right, #eeeeef, #dadaec);
+  
+    }
+  
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      top: 5px;
+      left: 10px;
+      border-radius: 50% ;
+      background: linear-gradient(to left,#eeeeef, #dadaec);
+      width:calc(100% - 20px);
+      height: 50px;
+      overflow: hidden;
+      
+    }
+  
+    .coffee {
+      position: absolute;
+      border-radius: 50%;
+      top: 20px;
+      left: 0px;
+      width:100% ;
+      height: 100% ;
+      background: linear-gradient(to right, #834725f3, #632c08, #3f1a02e7);
+    }
+    
+    .handle{
+      position: absolute;
+      width:200px;
+      height: 200px;
+      border: 30px solid #e5eaf6;
+      right: -100px;
+      top: 30px;
+      border-left: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-radius: 50%;
+      transform:rotate(45deg);
+  
+    }
+  
+    .plate{
+      position: absolute;
+      transform:translateX(-50%);
+      left: 50%;
+      bottom:-70px;
+      width: 500px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: #eaeaec;
+      box-shadow:35px 10px 30px rgba(0,0,0,0.2);
+    }
+    .plate::before{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      top: 10px;
+      bottom: 10px;
+      right:  10px;
+      left:  10px;
+      background: linear-gradient(to left,#eeeeef, #dadaec);
+    }
+  
+  
+    .plate::after{
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      top: 20px;
+      bottom: 30px;
+      right:  25px;
+      left:  25px;
+      background: linear-gradient(rgba(0,0,0,0.2) 25%,transparent,transparent);
+    }
+  
+    .vapour{
+      position: relative;
+      display: flex;
+      z-index: 1;
+      padding: 0 20px;
+    }
+    .vapour span{
+      position: relative;
+      bottom: 50px;
+      display: block;
+      margin:0 5px 50px;
+      min-width: 8px;
+      height: 120px;
+      background-color: #fff;
+      border-radius: 50%;
+      animation: animation 5s linear infinite;
+      opacity: 0;
+      filter: blur(10px);
+      animation-delay: calc(var(--i) * 0.5s);
+    }
+    @keyframes animation{
+      0%{
+        transform: translateY(0) scaleX(1);
+        opacity: 0;
+      }
+      15%{
+        opacity: 1;
+      }
+      50%{
+        transform: translateY(-150px) scaleX(5);
+      }
+      100%{
+        transform: translateY(-300px) scaleX(11);
+      }
+    }
